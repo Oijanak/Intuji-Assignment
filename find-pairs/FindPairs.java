@@ -12,6 +12,8 @@ public class FindPairs{
             int complement = target - arr[i];
             // Check if the complement exists in the list
             if (list.contains(complement)) {
+
+                //If pair is found print complemnt and current element in array
                 System.out.println("Pair found (" + complement+ ", " + arr[i] + ")");
                 return;
             }
