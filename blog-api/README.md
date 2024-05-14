@@ -41,7 +41,7 @@ Navigate to the Project directory in terminal
    ./mvnw spring-boot:run
 ```
 
-Application will run locally at http://localhost:8080
+Application will run locally at http://localhost:8080/api/blogs
 
 ### API Documentation
 
