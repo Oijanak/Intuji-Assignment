@@ -1,8 +1,8 @@
 ### Technologies Used
+
 - Java 21
 - Spring Boot 3.2.5
 - MySQL database
-
 
 ## Prerequisites
 
@@ -12,7 +12,6 @@ Before you begin, ensure you have the following installed:
 
 2. **MySQL Database**: Install MySQL Server on your machine or have access to a MySQL database and keep the mysql server running
 
-
 ## Configuring Username and Password in application.properties
 
 To configure the username and password for connecting to the MySQL database in your Spring Boot application, follow these steps:
@@ -20,13 +19,14 @@ To configure the username and password for connecting to the MySQL database in y
 1. Open the `application.properties` file located in the `src/main/resources` directory of your Spring Boot project.
 
 2. Add the following configuration properties to specify the MySQL database connection details:
-    ```properties
-   
-    spring.datasource.username=${db_username}
-    spring.datasource.password=${db_password}
-    ```
 
-    Replace ${db_username} and ${db_password} with your actual  MySQL username and MySQL password respectively.
+   ```properties
+
+   spring.datasource.username=${db_username}
+   spring.datasource.password=${db_password}
+   ```
+
+   Replace ${db_username} and ${db_password} with your actual MySQL username and MySQL password respectively.
 
 3. Save the `application.properties` file.
 
@@ -35,12 +35,14 @@ To configure the username and password for connecting to the MySQL database in y
 Navigate to the Project directory in terminal
 
 ```
-   cd ./BlogApi
+    git clone https://github.com/Oijanak/Intuji-Assignment.git
+    cd ./Intuji-Assignment/blog-api
    ./mvnw install
    ./mvnw spring-boot:run
-   ```
- Application will run locally at http://localhost:8080
- 
- ### API Documentation
- 	Swagger Api Documentation at http://localhost:8080/swagger-ui/index.html#/
+```
 
+Application will run locally at http://localhost:8080
+
+### API Documentation
+
+Swagger Api documentation <http://localhost:8080/swagger-ui/index.html#/>

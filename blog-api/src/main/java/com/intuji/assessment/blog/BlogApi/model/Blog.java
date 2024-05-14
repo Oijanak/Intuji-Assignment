@@ -1,7 +1,7 @@
 package com.intuji.assessment.blog.BlogApi.model;
 
 import jakarta.persistence.*;
-import org.springframework.http.HttpStatusCode;
+
 
 
 @Entity

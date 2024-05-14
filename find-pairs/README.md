@@ -6,9 +6,10 @@ Before you begin, ensure you have the following installed:
 
 ## How to run locally
 
-    Navigate to find-pairs directory in terminal
-    ```
-    cd ./find-pairs
-    javac FindPairs.java
-    java FindPairs
-    ```
+Navigate to the find-pairs directory in terminal
+
+```
+cd ./find-pairs
+javac FindPairs.java
+java FindPairs
+```
