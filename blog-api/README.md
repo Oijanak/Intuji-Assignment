@@ -35,8 +35,8 @@ To configure the username and password for connecting to the MySQL database in y
 Navigate to the Project directory in terminal
 
 ```
-    git clone https://github.com/Oijanak/Intuji-Assignment.git
-    cd ./Intuji-Assignment/blog-api
+
+    cd ./blog-api
    ./mvnw install
    ./mvnw spring-boot:run
 ```
