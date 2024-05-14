@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "e212e429-238f-47f0-9b9e-20e5654abdb5",
+		"name": "BlogApi",
+		"description": "# **This Blog Api Collection Includes Following Api Requests**\n\n- Get All the blogs list\n    \n- Get Blog By Id\n    \n- Post a Blog\n    \n- Update a Blog By Id",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27999423"
+	},
+	"item": [
+		{
+			"name": "GetAllBlogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/blogs",
+				"description": "### GET /api/blogs\n\nThis endpoint retrieves a list of blogs.\n\n#### Request\n\nThere are no request parameters for this endpoint.\n\n#### Response\n\nThe response is in JSON format and returns an array of blog objects with the following properties:\n\n- `blog_id` (number): The unique identifier for the blog.\n- `title` (string): The title of the blog.\n- `description` (string): The description of the blog.\n- `category` (string): The category of the blog.\n    \n\nExample response body:\n\n``` json\n[\n    {\n        \"blog_id\": \"integer\",\n        \"title\": \"string\",\n        \"description\":\"string\",\n        \"category\": \"string\"\n    }\n]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "GetAllBlogs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/blogs"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 May 2024 16:49:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"blog_id\": 1,\n        \"title\": \"Hello Srilanka\",\n        \"description\": \"History of Srilanka\",\n        \"category\": \"Country\"\n    },\n    {\n        \"blog_id\": 52,\n        \"title\": \"Iphone\",\n        \"description\": \"Iphone 17\",\n        \"category\": \"Tech\"\n    },\n    {\n        \"blog_id\": 102,\n        \"title\": \"Nepal\",\n        \"description\": \"History of Nepal Unifaication\",\n        \"category\": \"History\"\n    },\n    {\n        \"blog_id\": 104,\n        \"title\": \"ChatGpt\",\n        \"description\": \"How to Use ChatGpt optimally\",\n        \"category\": \"Artificial intelligence\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetBlogById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/blogs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "Reguired"
+						}
+					]
+				},
+				"description": "### Retrieve Blog by ID\n\nThis endpoint retrieves a specific blog by its ID.\n\n#### Request\n\n- Method: GET\n- URL: `http://localhost:8080/api/blogs/:id`\n    \n\n#### Response\n\nThe response will be a JSON object with the following schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"blog_id\": {\n      \"type\": \"number\"\n    },\n    \"title\": {\n      \"type\": \"string\"\n    },\n    \"description\": {\n      \"type\": \"string\"\n    },\n    \"category\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "GetBlogById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/blogs/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 May 2024 16:45:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blog_id\": 1,\n    \"title\": \"Hello Srilanka\",\n    \"description\": \"History of Srilanka\",\n    \"category\": \"Country\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PostBlog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Iphone\",\n    \"description\":\"Iphone 17\",\n    \"category\":\"Tech\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/blogs",
+				"description": "The endpoint allows the creation of a new blog by making an HTTP POST request to the specified URL.\n\n### Request Body\n\n- The request should include a JSON payload with the following parameters:\n    - `title` (string): The title of the blog.\n    - `description` (string): The description of the blog.\n    - `category` (string): The category of the blog.\n\n### Response\n\nThe response to the request will be in JSON format with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"blog_id\": {\n            \"type\": \"integer\"\n        },\n        \"title\": {\n            \"type\": \"string\"\n        },\n        \"description\": {\n            \"type\": \"string\"\n        },\n        \"category\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "PostBlog",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"ChatGpt\",\n    \"description\":\"How to Use ChatGpt optimally\",\n    \"category\":\"Artificial intelligence\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/blogs"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 May 2024 16:45:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blog_id\": 105,\n    \"title\": \"ChatGpt\",\n    \"description\": \"How to Use ChatGpt optimally\",\n    \"category\": \"Artificial intelligence\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateBlog",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\":\"Abcd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This endpoint allows updating a specific blog identified by the provided ID using an HTTP PUT request.\n\n### Request Body\n\n- The request should include a JSON payload with the following key to update:\n    - `description`: (string) The description of the blog.\n    - `category`: (string) The category of the blog\n    - `title:` (string)The title of the blog\n\n### Response\n\nThe response will be in JSON format with the following fields:\n\n- `blog_id`: (number) The ID of the updated blog.\n- `title`: (string) The title of the updated blog.\n- `description`: (string) The updated description of the blog.\n- `category`: (string) The category of the updated blog.\n    \n\n### Example Response\n\n``` json\n{\n    \"blog_id\": \"integer\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"category\": \"string\"\n}\n\n ```\n\n### JSON Schema for Response\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"blog_id\": {\n            \"type\": \"number\"\n        },\n        \"title\": {\n            \"type\": \"string\"\n        },\n        \"description\": {\n            \"type\": \"string\"\n        },\n        \"category\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "UpdateBlog",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\":\"Country\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/blogs/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 May 2024 16:44:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blog_id\": 1,\n    \"title\": \"Hello Srilanka\",\n    \"description\": \"History of Srilanka\",\n    \"category\": \"Country\"\n}"
+				}
+			]
+		}
+	]
+}
